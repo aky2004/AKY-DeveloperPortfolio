@@ -1,0 +1,109 @@
+@import "../../_globalColor";
+
+.skills-main-div {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+}
+
+.skills-text-div {
+  margin-left: 50px;
+}
+
+.skills-main-div > * {
+  flex: 1;
+  margin-bottom: 30px;
+}
+
+.skills-image-div > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-image-div svg {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 520px;
+}
+
+.skills-image-div > img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============ Section Heading ============ */
+.skills-heading {
+  font-size: 56px;
+  font-weight: 400;
+}
+
+/* ============ Subtitle ============ */
+.skills-text-subtitle {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: $subTitle;
+  margin-bottom: 16px;
+}
+
+.dark-mode .skills-text-subtitle {
+  color: #94a3b8;
+}
+
+/* ============ Skill Bullet Points ============ */
+.skills-text {
+  font-size: 16.5px;
+  line-height: 1.8;
+  position: relative;
+  padding-left: 4px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.skills-text:hover {
+  transform: translateX(6px);
+  color: #885bd5 !important;
+}
+
+.dark-mode .skills-text:hover {
+  color: #a78bfa !important;
+}
+
+/* ============ Media Queries ============ */
+@media (max-width: 1380px) {
+  .skills-heading {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-heading {
+    font-size: 30px;
+    text-align: center;
+  }
+  .greeting-text-p {
+    font-size: 16px;
+    line-height: normal;
+  }
+  .skills-main-div {
+    flex-direction: column;
+  }
+  .skills-text-div {
+    margin-left: 0px;
+    margin: 20px;
+  }
+  .skills-text {
+    font-size: 16px;
+  }
+  .skills-text-subtitle {
+    font-size: 16px;
+    text-align: center;
+  }
+  .skills-image-div {
+    /* display: none; */
+    order: 2;
+  }
+}
