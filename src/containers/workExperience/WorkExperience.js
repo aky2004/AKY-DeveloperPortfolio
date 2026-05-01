@@ -13,7 +13,12 @@ export default function WorkExperience() {
         <Fade bottom duration={1000} distance="20px">
           <div className="experience-container" id="workExperience">
             <div>
-              <h1 className="experience-heading">Experiences</h1>
+              <h1 className={isDark ? "dark-mode section-heading" : "section-heading"}>
+                Experiences
+              </h1>
+              <p className={isDark ? "dark-mode section-subtitle" : "section-subtitle"}>
+                Training and hands-on experience building real products
+              </p>
               <div className="experience-cards-div">
                 {workExperiences.experience.map((card, i) => {
                   return (

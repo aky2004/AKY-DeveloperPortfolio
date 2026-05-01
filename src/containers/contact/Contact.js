@@ -61,8 +61,10 @@ export default function Contact() {
     <Fade bottom duration={1000} distance="20px">
       <div className="main contact-margin-top" id="contact">
         <div className="contact-heading-div">
-          <h1 className="skills-heading">{contactInfo.title}</h1>
-          <p className={isDark ? "dark-mode subTitle skills-text-subtitle" : "subTitle skills-text-subtitle"}>
+          <h1 className={isDark ? "dark-mode section-heading" : "section-heading"}>
+            {contactInfo.title}
+          </h1>
+          <p className={isDark ? "dark-mode section-subtitle" : "section-subtitle"}>
             {contactInfo.subtitle}
           </p>
         </div>

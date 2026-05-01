@@ -2,13 +2,22 @@
 
 /* ============ Proficiency Heading ============ */
 .skills-heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 30px;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0 0 30px 0;
+  background: linear-gradient(135deg, #55198b 0%, #2d0a4e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -1px;
 }
 
 .dark-mode .skills-heading {
-  color: #f8fafc;
+  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* ============ Progress Bar Track ============ */
@@ -118,6 +127,30 @@
   margin: 0px auto;
   margin-top: 2rem;
   align-items: center;
+  position: relative;
+}
+
+.skills-container::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: calc(100% + 48px);
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(224, 64, 251, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 40%, rgba(100, 91, 235, 0.10) 0%, transparent 60%);
+  opacity: 0.5;
+  filter: blur(28px);
+  border-radius: 28px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dark-mode .skills-container::before {
+  opacity: 0.26;
 }
 
 .skills-container > * {
@@ -177,6 +210,6 @@
     margin: 20px 0;
   }
   .skills-heading {
-    font-size: 1.8rem;
+    font-size: 30px;
   }
 }

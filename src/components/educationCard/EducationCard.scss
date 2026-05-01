@@ -1,129 +1,53 @@
 @import "../../_globalColor";
 
-/* ============ Timeline Row ============ */
-.edu-timeline-row {
+/* =============================================
+   EDUCATION - Modern Bar Cards (No timeline)
+   ============================================= */
+
+.edu-bar-card {
   display: flex;
-  flex-direction: row;
-  align-items: stretch; /* Cards and line columns stretch full height */
-  min-height: 140px;
-}
-
-.edu-timeline-row-last {
-  min-height: auto;
-}
-
-/* ============ Left Column: Year ============ */
-.edu-year-col {
-  width: 160px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center; /* Centered year vertically */
-  justify-content: flex-end;
-  padding-right: 24px;
-}
-
-.edu-year-text {
-  font-size: 13.5px;
-  font-weight: 600;
-  color: $subTitle;
-  white-space: nowrap;
-  letter-spacing: 0.4px;
-  opacity: 0.8;
-}
-
-.edu-year-col-dark .edu-year-text {
-  color: #94a3b8;
-}
-
-/* ============ Center Column: Dot + Line ============ */
-.edu-line-col {
-  display: flex;
-  flex-direction: column;
+  gap: 18px;
   align-items: center;
-  width: 50px;
-  flex-shrink: 0;
-}
-
-/* The lines are flex items that fill the space above and below the dot */
-.edu-line-half {
-  width: 2px;
-  flex: 1;
-  background: rgba(85, 25, 139, 0.15);
-}
-
-.edu-line-half.dark {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-.edu-line-half.hidden {
-  background: transparent !important;
-}
-
-/* Dot sits in normal flow, perfectly centered because top/bottom lines flex equally */
-.edu-dot {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #fff;
-  border: 3px solid rgba(85, 25, 139, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(85, 25, 139, 0.08), 
-              inset 0 0 0 2px #fff; /* Double ring effect */
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-              box-shadow 0.3s ease, border-color 0.3s ease;
-  margin: 2px 0;
-}
-
-.edu-timeline-row:hover .edu-dot {
-  transform: scale(1.12);
-  border-color: #885bd5;
-  box-shadow: 0 6px 18px rgba(136, 91, 213, 0.2), 
-              inset 0 0 0 2px #fff;
-}
-
-.edu-dot-dark {
-  background: #1e1e2f;
-  border-color: rgba(167, 139, 250, 0.25);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 
-              inset 0 0 0 2px #1e1e2f;
-}
-
-.edu-timeline-row:hover .edu-dot-dark {
-  border-color: #a78bfa;
-  box-shadow: 0 6px 18px rgba(167, 139, 250, 0.25), 
-              inset 0 0 0 2px #1e1e2f;
-}
-
-.edu-dot-logo {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-/* ============ Right Column: Card ============ */
-.edu-card {
-  flex: 1;
-  margin-left: 26px;
-  margin-top: 14px;
-  margin-bottom: 14px;
-  padding: 26px 32px;
-  background: linear-gradient(150deg, #ffffff, #fdfbfe);
-  border: 1px solid rgba(85, 25, 139, 0.08);
-  border-radius: 16px;
+  padding: 22px 26px;
+  border-radius: 20px;
+  background:
+    radial-gradient(1200px 220px at 15% 0%, rgba(224, 64, 251, 0.06) 0%, transparent 55%),
+    radial-gradient(900px 240px at 85% 50%, rgba(100, 91, 235, 0.06) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.56) 100%);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(85, 25, 139, 0.16);
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.09),
+    0 10px 30px rgba(85, 25, 139, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
-              box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-/* Accent strip at the top */
-.edu-card::before {
+.edu-bar-card-wrap {
+  width: 100%;
+}
+
+.edu-bar-card-wrap:hover .edu-bar-card {
+  transform: translateY(-8px);
+  border-color: rgba(85, 25, 139, 0.30);
+  box-shadow:
+    0 22px 54px rgba(0, 0, 0, 0.11),
+    0 16px 44px rgba(85, 25, 139, 0.14),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.62);
+}
+
+.edu-bar-card-wrap:hover .edu-bar-card.edu-bar-card-dark {
+  transform: translateY(-8px);
+  border-color: rgba(196, 181, 253, 0.24);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.36),
+    0 18px 60px rgba(85, 25, 139, 0.28);
+}
+
+.edu-bar-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -131,147 +55,252 @@
   right: 0;
   height: 4px;
   background: linear-gradient(90deg, #885bd5, #e040fb, #885bd5);
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
+  opacity: 0.7;
 }
 
-.edu-timeline-row:hover .edu-card {
-  transform: translateX(6px) translateY(-2px);
-  box-shadow: 0 10px 30px rgba(136, 91, 213, 0.1);
-  border-color: rgba(136, 91, 213, 0.2);
+.edu-bar-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0) 48%,
+    rgba(255, 255, 255, 0.28) 100%
+  );
+  opacity: 0.14;
+  pointer-events: none;
 }
 
-.edu-timeline-row:hover .edu-card::before {
-  opacity: 1;
+.edu-bar-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(85, 25, 139, 0.30);
+  box-shadow:
+    0 22px 54px rgba(0, 0, 0, 0.11),
+    0 16px 44px rgba(85, 25, 139, 0.14),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.62);
 }
 
-.edu-card-dark {
-  background: linear-gradient(150deg, rgba(30, 30, 47, 0.6), rgba(20, 20, 34, 0.8));
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(167, 139, 250, 0.1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+.edu-bar-card-dark {
+  background:
+    radial-gradient(1200px 220px at 15% 0%, rgba(224, 64, 251, 0.10) 0%, transparent 55%),
+    radial-gradient(900px 240px at 85% 50%, rgba(100, 91, 235, 0.10) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(17, 24, 39, 0.80) 0%, rgba(17, 24, 39, 0.58) 100%);
+  border: 1px solid rgba(196, 181, 253, 0.22);
+  box-shadow:
+    0 20px 58px rgba(0, 0, 0, 0.30),
+    0 16px 54px rgba(85, 25, 139, 0.18);
 }
 
-.edu-card-dark::before {
+.edu-bar-card-dark::before {
   background: linear-gradient(90deg, #a78bfa, #e040fb, #a78bfa);
 }
 
-.edu-timeline-row:hover .edu-card-dark {
-  box-shadow: 0 10px 30px rgba(167, 139, 250, 0.15);
-  border-color: rgba(167, 139, 250, 0.25);
+.edu-bar-card-dark:hover {
+  transform: translateY(-8px);
+  border-color: rgba(196, 181, 253, 0.24);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.36),
+    0 18px 60px rgba(85, 25, 139, 0.28);
 }
 
-/* ============ Card Content ============ */
-.edu-school {
+.edu-bar-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 72px;
+}
+
+.edu-bar-logoWrap {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(85, 25, 139, 0.16);
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.09),
+    0 10px 30px rgba(85, 25, 139, 0.10),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.edu-bar-logoWrap::after {
+  content: "";
+  position: absolute;
+  width: 82px;
+  height: 82px;
+  border-radius: 22px;
+  background: radial-gradient(circle at 30% 30%, rgba(224, 64, 251, 0.12), transparent 60%);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.edu-bar-card-dark .edu-bar-logoWrap {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(196, 181, 253, 0.22);
+  box-shadow:
+    0 22px 64px rgba(0, 0, 0, 0.32),
+    0 18px 60px rgba(85, 25, 139, 0.22);
+}
+
+.edu-bar-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.edu-bar-logoFallback {
+  font-weight: 800;
+  font-size: 20px;
+  color: rgba(85, 25, 139, 0.8);
+}
+
+.edu-bar-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.edu-bar-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.edu-bar-school {
   margin: 0 0 4px 0;
   font-size: 21px;
-  font-weight: 700;
+  font-weight: 800;
   color: $titleColor;
-  line-height: 1.3;
-  letter-spacing: -0.3px;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
 }
 
-.dark-mode.edu-school {
+.edu-bar-school.dark-mode {
   color: #f8fafc;
 }
 
-.edu-degree {
-  margin: 0 0 12px 0;
-  font-size: 15px;
-  font-weight: 600;
+.edu-bar-degree {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
   color: $subTitle;
   line-height: 1.5;
 }
 
-.dark-mode.edu-degree {
+.edu-bar-degree.dark-mode {
   color: #94a3b8;
 }
 
-.edu-score {
-  display: inline-block;
-  font-size: 13.5px;
-  font-weight: 700;
-  color: #885bd5;
-  padding: 5px 14px;
-  background: rgba(136, 91, 213, 0.08);
-  border-radius: 8px;
-  letter-spacing: 0.2px;
-  margin-bottom: 2px;
+.edu-bar-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  flex: 0 0 auto;
 }
 
-.edu-score-dark {
-  color: #a78bfa;
-  background: rgba(167, 139, 250, 0.1);
+.edu-bar-duration {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px solid rgba(85, 25, 139, 0.16);
+  color: #374151;
 }
 
-.edu-bullets {
-  margin-top: 10px;
+.edu-bar-card-dark .edu-bar-duration {
+  background: rgba(17, 24, 39, 0.55);
+  border-color: rgba(196, 181, 253, 0.18);
+  color: #d1d5db;
 }
 
-.edu-bullets > ul {
-  margin: 0;
-  padding-left: 0;
+.edu-bar-score {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(85, 25, 139, 0.12);
+  border: 1px solid rgba(85, 25, 139, 0.22);
+  color: rgba(85, 25, 139, 0.9);
+}
+
+.edu-bar-score-dark {
+  background: rgba(167, 139, 250, 0.14);
+  border-color: rgba(196, 181, 253, 0.22);
+  color: #e5e7eb;
+}
+
+.edu-bar-highlights {
+  margin: 12px 0 0 0;
+  padding: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 12px;
 }
 
-.edu-bullets li {
-  font-size: 13.5px;
+.edu-bar-highlights li {
+  font-size: 12.5px;
+  font-weight: 700;
   color: $subTitle;
-  line-height: 1.6;
-  padding-left: 20px;
+  padding-left: 18px;
   position: relative;
 }
 
-.edu-bullets li::before {
-  content: "📍";
+.edu-bar-highlights li::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(85, 25, 139, 0.55);
+  box-shadow: 0 0 0 3px rgba(85, 25, 139, 0.12);
   position: absolute;
-  left: 0;
-  top: 1px;
-  font-size: 12px;
+  left: 2px;
+  top: 7px;
 }
 
-/* ============ Media Queries ============ */
-@media (max-width: 1380px) {
-  .edu-year-col {
-    width: 140px;
-  }
-  .edu-school {
-    font-size: 19px;
-  }
-  .edu-dot {
-    width: 44px;
-    height: 44px;
-  }
+.edu-bar-card-dark .edu-bar-highlights li {
+  color: #94a3b8;
+}
+
+.edu-bar-card-dark .edu-bar-highlights li::before {
+  background: rgba(196, 181, 253, 0.70);
+  box-shadow: 0 0 0 3px rgba(196, 181, 253, 0.14);
 }
 
 @media (max-width: 768px) {
-  .edu-timeline-row {
-    flex-wrap: wrap;
+  .edu-bar-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px 18px;
+  }
+
+  .edu-bar-left {
+    justify-content: flex-start;
+    flex: 0 0 auto;
+  }
+
+  .edu-bar-top {
+    flex-direction: column;
     align-items: flex-start;
   }
-  .edu-year-col {
-    width: 100%;
+
+  .edu-bar-meta {
     justify-content: flex-start;
-    padding: 0 0 10px 68px;
-  }
-  .edu-line-col {
-    position: absolute;
-    left: 0;
-    height: 100%;
-  }
-  .edu-dot {
-    margin-top: 30px;
-  }
-  .edu-line-half.top {
-    flex: 0 0 30px; /* fixed top line height for mobile */
-  }
-  .edu-card {
-    margin-left: 68px;
-    margin-top: 0;
-    width: calc(100% - 68px);
-    padding: 20px 24px;
-  }
-  .edu-school {
-    font-size: 18px;
   }
 }

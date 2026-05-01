@@ -46,7 +46,12 @@ export default function Projects() {
     return (
       <Suspense fallback={renderLoader()}>
         <div className="main" id="opensource">
-          <h1 className="project-title">Open Source Projects</h1>
+          <h1 className={isDark ? "dark-mode section-heading" : "section-heading"}>
+            Open Source Projects
+          </h1>
+          <p className={isDark ? "dark-mode section-subtitle" : "section-subtitle"}>
+            A curated set of repositories and contributions
+          </p>
           <div className="repo-cards-div-main">
             {repo.map((v, i) => {
               if (!v) {

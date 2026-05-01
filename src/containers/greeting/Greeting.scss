@@ -11,6 +11,31 @@
   padding: 20px 10px;
   margin: 0px auto;
   margin-top: 2rem;
+  position: relative;
+}
+
+.greet-main::before {
+  content: "";
+  position: absolute;
+  top: -26px;
+  left: 0;
+  right: 0;
+  height: calc(100% + 52px);
+  background:
+    radial-gradient(ellipse at 18% 10%, rgba(224, 64, 251, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 82% 35%, rgba(100, 91, 235, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse at 45% 92%, rgba(45, 212, 191, 0.05) 0%, transparent 65%);
+  opacity: 0.55;
+  filter: blur(28px);
+  border-radius: 28px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dark-mode .greet-main::before {
+  opacity: 0.28;
 }
 
 .greeting-main {
@@ -49,13 +74,19 @@
   font-size: 65px;
   font-weight: 800;
   line-height: 1.15;
-  color: $titleColor !important;
+  background: linear-gradient(135deg, #55198b 0%, #2d0a4e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   letter-spacing: -1.2px;
   margin-bottom: 12px;
 }
 
 .dark-mode.greeting-text {
-  color: #f8fafc !important;
+  background: linear-gradient(135deg, #c4b5fd 0%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .greeting-text-p {
@@ -67,6 +98,7 @@
 
 .dark-mode.greeting-text-p {
   color: #94a3b8 !important;
+  background: transparent !important;
 }
 
 .greeting-image-div {

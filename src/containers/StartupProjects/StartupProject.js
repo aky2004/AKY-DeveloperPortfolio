@@ -20,6 +20,25 @@ export default function StartupProject() {
 
   const project = bigProjects.projects[activeProject];
 
+  const renderMedia = (src, altText, className) => {
+    if (!src) return null;
+    const isVideo = src.match(/\.(mp4|webm|ogg)$/i);
+    if (isVideo) {
+      return (
+        <video
+          src={src}
+          className={className}
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+        />
+      );
+    }
+    return <img src={src} alt={altText} className={className} />;
+  };
+
   const goNext = () => {
     setActiveProject((prev) =>
       prev < bigProjects.projects.length - 1 ? prev + 1 : 0
@@ -36,7 +55,12 @@ export default function StartupProject() {
     <Fade bottom duration={1000} distance="20px">
       <div className="main" id="projects">
         <div className="projects-section">
-          <h1 className="skills-heading">{bigProjects.title}</h1>
+          <h1 className={isDark ? "dark-mode section-heading" : "section-heading"}>
+            {bigProjects.title}
+          </h1>
+          <p className={isDark ? "dark-mode section-subtitle" : "section-subtitle"}>
+            {bigProjects.subtitle}
+          </p>
 
           {/* Showcase Area */}
           <div className="project-showcase">
@@ -70,11 +94,7 @@ export default function StartupProject() {
               <div className="device-laptop">
                 <div className="laptop-screen">
                   {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.projectName}
-                      className="device-screenshot"
-                    />
+                    renderMedia(project.image, project.projectName, "device-screenshot")
                   ) : (
                     <div className="device-placeholder">
                       <span>{project.projectName}</span>
@@ -91,11 +111,7 @@ export default function StartupProject() {
                 <div className="phone-notch"></div>
                 <div className="phone-screen">
                   {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.projectName + " mobile"}
-                      className="device-screenshot"
-                    />
+                    renderMedia(project.image, project.projectName + " mobile", "device-screenshot")
                   ) : (
                     <div className="device-placeholder">
                       <span>{project.projectName}</span>
@@ -117,7 +133,7 @@ export default function StartupProject() {
                 >
                   <div className="thumbnail-image-wrap">
                     {proj.image ? (
-                      <img src={proj.image} alt={proj.projectName} />
+                      renderMedia(proj.image, proj.projectName, "")
                     ) : (
                       <div className="thumbnail-placeholder"></div>
                     )}

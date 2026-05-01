@@ -6,13 +6,37 @@
 
 .projects-section {
   padding-bottom: 40px;
+  position: relative;
+}
+
+.projects-section::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: 0;
+  right: 0;
+  height: calc(100% + 48px);
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(224, 64, 251, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 40%, rgba(100, 91, 235, 0.10) 0%, transparent 60%);
+  opacity: 0.55;
+  filter: blur(28px);
+  border-radius: 28px;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 18%, #000 82%, transparent 100%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dark-mode .projects-section::before {
+  opacity: 0.28;
 }
 
 /* ---- Showcase Area ---- */
 .project-showcase {
   position: relative;
   background-color: $lightBackground2;
-  border: 1px solid rgba(100, 91, 235, 0.12);
+  border: 1px solid rgba(85, 25, 139, 0.14);
   border-radius: 24px;
   padding: 60px 80px;
   margin-top: 30px;
@@ -21,13 +45,32 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 10px 40px -15px rgba(0,0,0,0.05);
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.10),
+    0 10px 34px rgba(85, 25, 139, 0.10);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
 }
 
 .dark-mode .project-showcase {
   background-color: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: none;
+  border: 1px solid rgba(196, 181, 253, 0.20);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.28);
+}
+
+.project-showcase:hover {
+  transform: translateY(-6px);
+  border-color: rgba(85, 25, 139, 0.28);
+  box-shadow:
+    0 22px 54px rgba(0, 0, 0, 0.10),
+    0 16px 44px rgba(85, 25, 139, 0.18);
+}
+
+.dark-mode .project-showcase:hover {
+  border-color: rgba(196, 181, 253, 0.22);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.36),
+    0 18px 60px rgba(85, 25, 139, 0.28);
 }
 
 /* Subtle gradient glow */
@@ -40,7 +83,7 @@
   height: 120%;
   background: radial-gradient(
     ellipse at center,
-    rgba(100, 91, 235, 0.05) 0%,
+    rgba(85, 25, 139, 0.06) 0%,
     transparent 65%
   );
   pointer-events: none;
@@ -290,38 +333,80 @@
   flex: 1;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(100, 91, 235, 0.1);
+  border: 1px solid rgba(85, 25, 139, 0.14);
   border-radius: 16px;
   padding: 32px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.10),
+    0 10px 34px rgba(85, 25, 139, 0.10),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
 }
 
 .dark-mode .project-info-left {
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: none;
+  border: 1px solid rgba(196, 181, 253, 0.20);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.28);
   backdrop-filter: none;
+}
+
+.project-info-left:hover {
+  transform: translateY(-6px);
+  border-color: rgba(85, 25, 139, 0.28);
+  box-shadow:
+    0 22px 54px rgba(0, 0, 0, 0.10),
+    0 16px 44px rgba(85, 25, 139, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+
+.dark-mode .project-info-left:hover {
+  border-color: rgba(196, 181, 253, 0.22);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.36),
+    0 18px 60px rgba(85, 25, 139, 0.28);
 }
 
 .project-info-right {
   flex: 0 0 320px;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(100, 91, 235, 0.1);
+  border: 1px solid rgba(85, 25, 139, 0.14);
   border-radius: 16px;
   padding: 32px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04), inset 0 0 0 1px rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 16px 44px rgba(0, 0, 0, 0.10),
+    0 10px 34px rgba(85, 25, 139, 0.10),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
 }
 
 .dark-mode .project-info-right {
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: none;
+  border: 1px solid rgba(196, 181, 253, 0.20);
+  box-shadow: 0 18px 54px rgba(0, 0, 0, 0.28);
   backdrop-filter: none;
+}
+
+.project-info-right:hover {
+  transform: translateY(-6px);
+  border-color: rgba(85, 25, 139, 0.28);
+  box-shadow:
+    0 22px 54px rgba(0, 0, 0, 0.10),
+    0 16px 44px rgba(85, 25, 139, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+}
+
+.dark-mode .project-info-right:hover {
+  border-color: rgba(196, 181, 253, 0.22);
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.36),
+    0 18px 60px rgba(85, 25, 139, 0.28);
 }
 
 .project-info-title {

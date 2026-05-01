@@ -287,13 +287,13 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/chronoNotesLogo.png"),
-      projectName: "ChronoNotes – Intelligent Note-Taking Web App",
-      projectDesc: "Developed a modern, privacy-focused note-taking application designed for speed and simplicity. Implemented a robust rich-text editor supporting markdown, code blocks, and real-time syncing. Engineered a tag-based categorization system and powerful search functionality, allowing users to find notes instantly. Built with a responsive, offline-first approach using local storage and service workers.",
-      techStack: ["React.js", "Firebase", "Redux", "Material UI", "Draft.js"],
+      projectName: "ChronoNotesApp - YourPersonalNotesTakingApp",
+      projectDesc: "ChronoNotesApp is a full-stack note-taking application that allows users to register, login, create, edit, and delete notes. Built a responsive interface with React, Vite, and Bootstrap, featuring protected routes and Redux Toolkit for state management. Developed a secure Node.js/Express backend API utilizing MongoDB with Mongoose, and implemented JWT and bcryptjs for robust user authentication.",
+      techStack: ["React 18", "Node.js", "Express", "MongoDB", "Redux Toolkit", "Bootstrap", "JWT"],
       highlights: [
-        {stat: "<100ms", label: "Search Latency"},
-        {stat: "Offline", label: "First Architecture"},
-        {stat: "Rich Text", label: "Formatting Engine"}
+        {stat: "Secure", label: "JWT Authentication"},
+        {stat: "CRUD", label: "Note Management"},
+        {stat: "State", label: "Redux Toolkit Managed"}
       ],
       footerLink: [
         {
@@ -304,13 +304,13 @@ const bigProjects = {
     },
     {
       image: require("./assets/images/devConnectLogo.png"),
-      projectName: "DevConnect – Social Network for Developers",
-      projectDesc: "Created a niche social networking platform tailored specifically for software developers. Features include code snippet sharing with syntax highlighting, GitHub repository integration for profile building, and a curated trending topics feed. Implemented real-time notifications and messaging using WebSockets. Scaled the backend to handle a simulated user base of 10,000+ with efficient database query optimization.",
-      techStack: ["Next.js", "PostgreSQL", "Prisma", "Tailwind CSS", "Socket.io"],
+      projectName: "E-Commerce Grocery Platform Development",
+      projectDesc: "Led frontend development and checkout module in a 4-member team, building a responsive e-commerce interface supporting 100+ product listings with filtering and category-based navigation. Engineered a 3-step optimized checkout flow with integrated payment handling logic, reducing transaction time by 40% and improving purchase completion rates. Developed secure user authentication systems in PHP; registered users accounted for over 60% of total transactions. Contributed to admin dashboard and order history module, enabling efficient inventory tracking and order management, improving operational workflow by 50%.",
+      techStack: ["HTML", "CSS", "PHP", "SQL", "JavaScript"],
       highlights: [
-        {stat: "10k+", label: "Simulated User Load"},
-        {stat: "Real-time", label: "Feed & Messaging"},
-        {stat: "GitHub", label: "Seamless Integration"}
+        {stat: "40%", label: "Faster Transaction Time"},
+        {stat: "50%", label: "Workflow Improvement"},
+        {stat: "100+", label: "Product Listings"}
       ],
       footerLink: [
         {
@@ -334,27 +334,66 @@ const achievementSection = {
   achievementsCards: [
     {
       title: "AWS Cloud Practitioner Essentials",
-      subtitle:
-        "Completed AWS Cloud Practitioner Essentials certification from Amazon Web Services (Apr 2026).",
-      image: require("./assets/images/awsLogo.png"),
-      imageAlt: "AWS Logo",
-      footerLink: []
+      description:
+        "Built core AWS fluency across compute, storage, networking, security, and pricing models for cloud-first system decisions.",
+      issuer: "Amazon Web Services",
+      issuerLogo: require("./assets/images/awsLogo.png"),
+      bannerColor: "#1e3a8a",
+      date: "Apr 2026",
+      category: "Cloud",
+      footer: []
     },
     {
       title: "OCI DevOps Professional",
-      subtitle:
-        "Earned Oracle Cloud Infrastructure DevOps Professional certification (Sep 2025).",
-      image: require("./assets/images/oracleLogo.png"),
-      imageAlt: "Oracle Logo",
-      footerLink: []
+      description:
+        "Strengthened OCI DevOps skills in CI/CD pipelines, release automation, observability, and deployment reliability practices.",
+      issuer: "Oracle Cloud",
+      issuerLogo: require("./assets/images/oracleLogo.png"),
+      bannerColor: "#dc2626",
+      date: "Sep 2025",
+      category: "DevOps",
+      footer: []
     },
     {
       title: "Full-Stack Development Using MERN",
-      subtitle:
-        "Completed Full-Stack Development Using MERN certification from CipherSchools (Jul 2025).",
-      image: require("./assets/images/cipherSchoolsLogo.png"),
-      imageAlt: "CipherSchools Logo",
-      footerLink: []
+      description:
+        "Completed 70 hours of hands-on MERN training, gaining practical experience in full-stack architecture, auth, APIs, and deployment flow.",
+      issuer: "CipherSchools",
+      issuerLogo: require("./assets/images/cipherSchoolsLogo.png"),
+      bannerColor: "#c47a1f",
+      date: "Jul 2025",
+      category: "Full-Stack",
+      footer: []
+    },
+    {
+      title: "Java Programming",
+      description:
+        "Developed a strong Java foundation through 72 hours of practice, focusing on OOP design, collections, and problem-solving patterns.",
+      issuer: "Lovely Professional University",
+      issuerLogo: require("./assets/images/lpuLogo.png"),
+      bannerColor: "#d97706",
+      date: "May 2025",
+      category: "Backend"
+    },
+    {
+      title: "Object Oriented Programming",
+      description:
+        "Deepened object-oriented design skills with 72 hours of structured training on abstraction, inheritance, polymorphism, and clean class design.",
+      issuer: "Neo Colab",
+      issuerLogo: require("./assets/images/neocolabLogo.png"),
+      bannerColor: "#1a8e8e",
+      date: "Dec 2024",
+      category: "Programming"
+    },
+    {
+      title: "TCP/IP and Advanced Topics",
+      description:
+        "Learned practical networking fundamentals including the TCP/IP stack, transport protocols, packet flow, and real-world troubleshooting concepts.",
+      issuer: "Coursera",
+      issuerLogo: require("./assets/images/courseraLogo.png"),
+      bannerColor: "#1e3a8a",
+      date: "Nov 2024",
+      category: "Networking"
     }
   ],
   display: true // Set false to hide this section, defaults to true
